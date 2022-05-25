@@ -19,14 +19,21 @@ class Movie {
     public $genre;
     public $watch;
     // Create a new constructor function
-    public function __construct( $_title, $_length, $_genre, $_watch) {
+    public function __construct( $_title, $_length, $_genre) {
         $this->title = $_title;
         $this->length = $_length;
         $this->genre = $_genre;
-        $this->watch = $_watch;
+    }
+
+    public function setWatch($watch) {
+        $this->watch = $watch;
+    }
+
+    public function getWatch() {
+        return $this->watch;
     }
     // Create a function that define if you watch the movie
-    public function setWatch($_result) {
+    public function watchMovie($_result) {
         if($_result === true){
             var_dump("I've watched this Movie");
         } else {
@@ -37,12 +44,18 @@ class Movie {
     
 
  }
-
-// Create the movie Objects
- $trainspotting = new Movie('trainspotting', 140, 'drama', false);
- $avengers = new Movie('Avengers - Infinity War', 230, 'action', false);
- $batman = new Movie('Batman - The Dark Kinght', 220, 'thriller', false);
- // Invoke and save the function response
- $result = $trainspotting->setWatch(true); $avengers->setWatch(false); $batman->setWatch(false);
+ 
+ // Create the movie Objects
+ $trainspotting = new Movie('trainspotting', 140, 'drama');
+ $trainspotting->setWatch(true);
+ $trainspotting->watchMovie($trainspotting->getWatch());
+ $avengers = new Movie('Avengers - Infinity War', 230, 'action');
+ $avengers->setWatch(false);
+ $avengers->watchMovie($avengers->getWatch());
+ $batman = new Movie('Batman - The Dark Kinght', 220, 'thriller');
+ $batman->setWatch(true);
+ $batman->watchMovie($batman->getWatch());
+ 
+ 
  // show the Movie objects
- var_dump($trainspotting, $avengers, $batman, $result);
+ var_dump($trainspotting, $avengers, $batman);
