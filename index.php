@@ -27,7 +27,7 @@ class Movie {
     }
      // Create a function that define if you watch the movie
     public function getLength() {
-        return "La lunghezza di . $this->title . '' . è di . $this->length . min ";
+        return "La lunghezza di  $this->title  è di  $this->length  min ";
     }
 
     
@@ -43,3 +43,7 @@ class Movie {
 
  // show the Movies objects
  var_dump($movies);
+ 
+ foreach ($movies as $movie) {
+    var_dump($movie->getLength());
+ };
