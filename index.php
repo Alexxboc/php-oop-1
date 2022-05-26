@@ -26,12 +26,8 @@ class Movie {
         $this->watch = $_watch;
     }
      // Create a function that define if you watch the movie
-    public function watchMovie() {
-        if($this->watch === true){
-            var_dump("I've watched this Movie");
-        } else {
-            var_dump("I have to watch this Movie");
-        }
+    public function getLength() {
+        return "La lunghezza di . $this->title . '' . è di . $this->length . min ";
     }
 
     
